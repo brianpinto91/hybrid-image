@@ -81,7 +81,7 @@ class HybridImage():
 
         self.imageA_lfreq = self.__conv_2d(self.imageA, self.filter)
         self.imageB_hfreq = self.imageB - self.__conv_2d(self.imageB, self.filter)
-        self.imageB_hfreq = np.clip(self.imageB_hfreq-20, 0, 255)
+        self.imageB_hfreq = np.clip(self.imageB_hfreq - 150, 0, 255)
         self.hybrid_image = np.clip(self.imageA_lfreq + self.imageB_hfreq, 0, 255)
 
     def __conv_2d(self, image, filter):
